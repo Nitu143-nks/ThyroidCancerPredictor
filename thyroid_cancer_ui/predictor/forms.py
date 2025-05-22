@@ -1,0 +1,20 @@
+from django import forms
+
+class ThyroidCancerForm(forms.Form):
+    age = forms.IntegerField(label="Age", required=True)
+    gender = forms.ChoiceField(choices=[('Male', 'Male'), ('Female', 'Female')], required=True)
+    smoking = forms.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')], required=True)
+    hx_smoking = forms.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')], required=True)
+    hx_radiotherapy = forms.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')], required=True)
+    thyroid_function = forms.CharField(label="Thyroid Function", required=True)
+    physical_examination = forms.CharField(label="Physical Examination", required=True)
+    adenopathy = forms.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')], required=True)
+    pathology = forms.CharField(label="Pathology", required=True)
+    focality = forms.ChoiceField(choices=[('Unifocal', 'Unifocal'), ('Multifocal', 'Multifocal')], required=True)
+    risk = forms.CharField(label="Risk", required=True)
+    tumor_size = forms.CharField(label="Tumor Size (T)", required=True)
+    node_status = forms.CharField(label="Node Status (N)", required=True)
+    metastasis = forms.CharField(label="Metastasis (M)", required=True)
+    stage = forms.CharField(label="Stage", required=True)
+    response = forms.CharField(label="Response", required=True)
+    recurred = forms.ChoiceField(choices=[('Yes', 'Yes'), ('No', 'No')], required=True)
